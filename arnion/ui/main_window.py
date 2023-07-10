@@ -1,5 +1,7 @@
 import tkinter as tk
 
+from arnion.Data.departments_data import DepartmentDataHandler
+from arnion.Data.employees_data import EmployeeDataHandler
 from arnion.db.mysql_connection import ConnectionHandler
 
 
@@ -57,8 +59,9 @@ class MainWindow:
 
     # Функция Тест
     def do_test(self):
-        ch = ConnectionHandler()
-        ch.do_test()
+        employees = EmployeeDataHandler.select_list()
+        for employee in employees:
+            print (employee.get_full_name())
 
     # Функция закрытия окна
     def close(self):

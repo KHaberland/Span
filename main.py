@@ -12,13 +12,12 @@ def main():
     if not chk:
         root = tk.Tk()
         root.withdraw()
-        mb.showerror(parent = None, title = "Ошибка", message = "Отсутствует соединение с MySQL сервером!")
+        mb.showerror(parent=None, title="Ошибка", message="Отсутствует соединение с MySQL сервером!")
         return
 
     main_window = MainWindow()
     main_window.start_mainloop()
 
     return 0
-
 if __name__ == '__main__':
     main()

@@ -1,4 +1,4 @@
-+CREATE DATABASE IF NOT EXISTS span;
+CREATE DATABASE IF NOT EXISTS span;
 USE span;
 DROP TABLE IF EXISTS `departments`;
 CREATE TABLE IF NOT  EXISTS `departments` (
@@ -34,3 +34,12 @@ VALUES ('Галина', 'Руслановна', 'Маргаритова', 1);
 
 INSERT INTO employees (first_name, middle_name, last_name, department_id)
 VALUES ('Артем', 'Николаевич', 'Григорин', 2);
+
+INSERT INTO employees (first_name, middle_name, last_name, department_id)
+VALUES ('Игорь', 'Павлович', 'Лепетун', 2);
+
+INSERT INTO employees (first_name, middle_name, last_name, department_id)
+VALUES ('Андрей', 'Валентинович', 'Горский', 3);
+
+INSERT INTO employees (first_name, middle_name, last_name, department_id)
+VALUES ('Сергей', 'Петрович', 'Королев', 3);

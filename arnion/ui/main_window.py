@@ -1,8 +1,8 @@
 import tkinter as tk
 
-from arnion.Data.departments_data import DepartmentDataHandler
 from arnion.Data.employees_data import EmployeeDataHandler
-from arnion.db.mysql_connection import ConnectionHandler
+from arnion.ui.departments_reports_ui import DepartmentsReportWindow
+from arnion.ui.employees_reports_ui import EmployeesReportWindow
 
 
 class MainWindow:
@@ -37,12 +37,12 @@ class MainWindow:
 
         # Добавление кнопки отчетов ОТДЕЛЫ
         btn_report = tk.Button(self.window, text="Отделы",
-                               font=('Helvetica', 10, 'bold'), bg='#ccffcc')
+                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command=self.do_report_departments)
         btn_report.place(x=25, y=200, width=120, height=50)
 
         # Добавление кнопки отчетов СОТРУДНИКИ
         btn_close = tk.Button(self.window, text="Сотрудники",
-                              font=('Helvetica', 10, 'bold'), bg='#ccffcc')
+                              font=('Helvetica', 10, 'bold'), bg='#ccffcc', command=self.do_report_employees)
         btn_close.place(x=160, y=200, width=120, height=50)
 
 
@@ -62,6 +62,18 @@ class MainWindow:
         employees = EmployeeDataHandler.select_list()
         for employee in employees:
             print (employee.get_full_name())
+
+    # открытие отчета Отделы
+
+    def do_report_departments(self):
+        rpt = DepartmentsReportWindow()
+        rpt.open()
+
+    # открытие отчета Сотрудники
+
+    def do_report_employees(self):
+        rpt = EmployeesReportWindow()
+        rpt.open()
 
     # Функция закрытия окна
     def close(self):

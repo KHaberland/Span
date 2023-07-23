@@ -1,6 +1,7 @@
 import tkinter as tk
 
-from arnion.Data.employees_data import EmployeeDataHandler
+from arnion.Data.departments_data import DepartmentDataHandler, DepartmentDataObject
+from arnion.Data.employees_data import EmployeeDataHandler, EmployeeDataObject
 from arnion.ui.departments_reports_ui import DepartmentsReportWindow
 from arnion.ui.employees_reports_ui import EmployeesReportWindow
 
@@ -56,12 +57,14 @@ class MainWindow:
         btn_close = tk.Button(self.window, text="выход",
                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command=self.close)
         btn_close.place(x=160, y=300, width=120, height=50)
-
-    # Функция Тест
+# Функция Тест
     def do_test(self):
-        employees = EmployeeDataHandler.select_list()
-        for employee in employees:
-            print (employee.get_full_name())
+        employee = EmployeeDataObject(first_name="Ирина", middle_name="Юрьевна",
+                                      last_name="Костюченко", department_id="3")
+        print(employee.employee_id)
+        EmployeeDataHandler.insert(employee)
+        print(employee.employee_id)
+        print("Готово")
 
     # открытие отчета Отделы
 

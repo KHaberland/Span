@@ -26,12 +26,12 @@ class MainWindow:
 
         # Добавление кнопки данных ОТДЕЛЫ
         btn_report = tk.Button(self.window, text="Отделы",
-                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command= self.do_list_departments)
+                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command=self.do_list_departments)
         btn_report.place(x=25, y=100, width=120, height=50)
 
         # Добавление кнопки данных СОТРУДНИКИ
         btn_close = tk.Button(self.window, text="Сотрудники",
-                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command= self.do_list_employees)
+                               font=('Helvetica', 10, 'bold'), bg='#ccffcc', command=self.do_list_employees)
         btn_close.place(x=160, y=100, width=120, height=50)
 
         # Добавление метки заголовка отчетов
